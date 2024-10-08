@@ -49,4 +49,4 @@ seeds:
 
 dispatch:
   - macro_namespace: dbt
-    search_order: ['adi_common', 'adi_domain_jaffle', 'dbt']
+    search_order: ['adi_domain_jaffle', 'adi_common', 'dbt']
