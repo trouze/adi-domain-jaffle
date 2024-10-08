@@ -1,1 +1,1 @@
-select * from {{ ref('dim_customers') }}
+select *, 'test' as test_col from {{ ref('dim_customers') }}
