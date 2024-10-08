@@ -1,5 +1,5 @@
 packages:
   - package: dbt-labs/codegen
     version: 0.7.0
-projects:
-  - name: adi_common
+  - git: "https://github.com/trouze/adi-common.git"
+    revision: "{{ env_var('DBT_COMMON_REVISION', 'dev') }}"

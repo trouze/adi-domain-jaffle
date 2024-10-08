@@ -30,15 +30,18 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   adi_domain_jaffle:
-    # Config indicated by + and applies to all files under models/example/
-    core:
-      +materialized: table
-      +schema: core
-    marts:
-      +materialized: table
-      +schema: mart
-      +group: mart
-      +access: public
+    silver:
+      integrated:
+        +materialized: view
+        +schema: integrated
+      core:
+        +materialized: table
+        +schema: core
+    gold:
+      unified_pipeline:
+        +materialized: table
+        +schema: unified_pipeline
+
 
 seeds:
   adi_domain_jaffle:
