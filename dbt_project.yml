@@ -48,5 +48,5 @@ seeds:
     +schema: trouze
 
 dispatch:
-  - macro_namespace: adi_common
+  - macro_namespace: dbt
     search_order: ['adi_common', 'adi_domain_jaffle', 'dbt']
