@@ -30,6 +30,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   adi_domain_jaffle:
+    staging:
+      +materialized: view
+      +schema: staging
     # Config indicated by + and applies to all files under models/example/
     core:
       +materialized: table
