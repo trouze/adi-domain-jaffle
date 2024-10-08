@@ -1,3 +1,3 @@
 packages:
   - git: "https://github.com/trouze/adi-common.git"
-    revision: a899f13df0dfe86c0a5b2332fc170d59366a7d62
+    revision: deab7bb600342983ec32bd2f7b0598951c1c8e8d
