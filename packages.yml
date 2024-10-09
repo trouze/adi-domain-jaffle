@@ -1,3 +1,2 @@
 packages:
-  - git: "https://github.com/trouze/adi-common.git"
-    revision: env_var('DBT_COMMON_PKG')
+  - git: "https://{{env_var('DBT_ENV_SECRET_GH')}}@github.com/trouze/adi-common.git#{{env_var('DBT_COMMON_PKG')}}"
