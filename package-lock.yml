@@ -1,8 +1,4 @@
 packages:
-  - package: dbt-labs/codegen
-    version: 0.7.0
   - git: https://github.com/trouze/adi-common.git
-    revision: 972e1d371976c53537f5175189b95b297efee50d
-  - package: dbt-labs/dbt_utils
-    version: 0.8.6
-sha1_hash: 17195d056c7aae51fee5c4300014b6396af29bd5
+    revision: 9a88fa47f7c111be9ed896bfc7aa533edcd087a1
+sha1_hash: 2148067d0e7182337e13c42d5cda80a1e8790b84

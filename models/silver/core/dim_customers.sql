@@ -1,1 +1,1 @@
-select * from {{ ref('stg_customers') }}
+select *, 'test' as test_col from {{ ref('stg_customers') }}
