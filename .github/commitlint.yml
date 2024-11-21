@@ -1,0 +1,31 @@
+name: Commit Message Linter
+
+on: 
+  push:
+    branches:
+      - '**' # Trigger on all branches
+
+jobs:
+  lint-commits:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Use the appropriate Node.js version for your project
+
+      # Install commitlint and husky
+      - name: Install Commitlint
+        run: |
+          npm install --save-dev @commitlint/{cli,config-conventional}
+
+      # Verify commit messages
+      - name: Lint commits
+        run: |
+          npx commitlint --from=$(git rev-parse HEAD^1) --to=HEAD
