@@ -1,0 +1,15 @@
+version: 2
+
+exposures:
+  - name: ae_demo
+    description: demo
+    type: dashboard
+    url: https://app.sigmacomputing.com/dbt-labs/workbook/workbook-6XJUeT9dfnQh6jiH2NWVAj?:link_source=share
+    maturity: high  # Indicates level of confidence or stability in the exposure
+    owner:
+      name: Tyler Rouze
+      email: tyler.rouze@dbtlabs.com
+    
+    depends_on:
+      - ref('customers')  
+    label: "Human-Friendly Name for this Exposure!"
