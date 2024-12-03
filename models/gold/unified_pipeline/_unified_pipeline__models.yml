@@ -4,12 +4,13 @@ exposures:
   - name: ae_demo
     description: demo
     type: dashboard
-    url: https://app.sigmacomputing.com/dbt-labs/workbook/workbook-6XJUeT9dfnQh6jiH2NWVAj?:link_source=share
+    url: https://10az.online.tableau.com/t/dbtlabspartner/authoring/demoae/Sheet1#1
     maturity: high  # Indicates level of confidence or stability in the exposure
     owner:
       name: Tyler Rouze
       email: tyler.rouze@dbtlabs.com
     
     depends_on:
-      - ref('customers')  
+      - ref('customers')
+      
     label: "Human-Friendly Name for this Exposure!"
