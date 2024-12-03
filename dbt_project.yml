@@ -47,6 +47,10 @@ seeds:
     +enabled: false
     +schema: trouze
 
+vars:
+  dbt_project_evaluator:
+    exclude_packages: ["all"]
+
 dispatch:
   - macro_namespace: dbt
     search_order: ['adi_domain_jaffle', 'adi_common', 'dbt']
