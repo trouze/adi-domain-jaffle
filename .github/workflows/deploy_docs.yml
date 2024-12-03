@@ -1,0 +1,65 @@
+name: docs
+
+on:
+  workflow_dispatch:
+    # inputs:
+    #   DBT_CLOUD_RUN_ID:
+    #     description: 'The ID of the dbt Cloud run'
+    #     required: true
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+env:
+  DBT_ACCOUNT_ID: 51798 # enter your account id
+  DBT_CLOUD_RUN_ID: 345709384
+  DBT_API_KEY: ${{ secrets.DBT_API_KEY }}
+  DBT_ARTIFACTS_URL: https://cloud.getdbt.com/api/v2/accounts/${DBT_ACCOUNT_ID}/runs/${DBT_CLOUD_RUN_ID}/artifacts
+
+jobs:
+  docs:
+    name: docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: fetch artifacts
+        run: |
+          mkdir pages
+          curl -H "Authorization: Bearer $DBT_CLOUD_TOKEN" \
+            "$DBT_ARTIFACTS_URL/manifest.json" --output ./pages/manifest.json
+          curl -H "Authorization: Bearer $DBT_CLOUD_TOKEN" \
+            "$DBT_ARTIFACTS_URL/catalog.json" --output ./pages/catalog.json
+          curl -H "Authorization: Bearer $DBT_CLOUD_TOKEN" \
+            "$DBT_ARTIFACTS_URL/index.html" --output ./pages/index.html
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./pages
+
+  # Deployment job
+  deploy:
+    environment:
+      name: demo-dbt-docs
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: docs
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
