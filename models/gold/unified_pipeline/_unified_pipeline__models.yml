@@ -14,3 +14,12 @@ exposures:
       - ref('customers')
       
     label: "Human-Friendly Name for this Exposure!"
+
+models:
+  - name: customers
+    description: some description
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
+          - unique
