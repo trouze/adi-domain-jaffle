@@ -1,6 +1,6 @@
 packages:
   - git: https://{{ env_var('DBT_ENV_SECRET_GH') }}@github.com/trouze/adi-common.git
-    revision: 2d335be7de051dca4501bc09b418abebce56d98c
+    revision: d36cb2b0a997a7f0f5e11488194242b66d56de50
   - package: brooklyn-data/dbt_artifacts
     version: 2.7.0
   - package: dbt-labs/dbt_project_evaluator
