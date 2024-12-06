@@ -30,6 +30,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   adi_domain_jaffle:
+    +group: tylers_models
     silver:
       integrated:
         +materialized: view

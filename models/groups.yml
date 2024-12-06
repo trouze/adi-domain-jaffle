@@ -1,0 +1,9 @@
+version: 2
+
+groups:
+  - name: tylers_models
+    description: "Models related to the finance department"
+    owner:
+      # Email is required to receive model-level notifications, additional properties are also allowed.
+      name: "Finance Team"
+      email: tyler.rouze@dbtlabs.com
