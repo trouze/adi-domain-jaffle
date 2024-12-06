@@ -18,6 +18,8 @@ exposures:
 models:
   - name: customers
     description: some description
+    meta:
+      owner: "tyler.rouze@dbtlabs.com"
     columns:
       - name: customer_id
         data_tests:
