@@ -1,1 +1,1 @@
-select *, 'test' as test_col from {{ ref('dim_customers') }}
+select * from {{ ref('dim_customers') }} where signup_date > '2021-08-10'
