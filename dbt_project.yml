@@ -52,6 +52,9 @@ vars:
   dbt_project_evaluator:
     exclude_packages: ["all"]
 
+flags:
+  enable_iceberg_materializations: True
+
 dispatch:
   - macro_namespace: dbt
     search_order: ['adi_domain_jaffle', 'adi_common', 'dbt']
