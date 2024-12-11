@@ -51,6 +51,7 @@ seeds:
 vars:
   dbt_project_evaluator:
     exclude_packages: ["all"]
+  schema_behavior: 'default'
 
 flags:
   enable_iceberg_materializations: True
