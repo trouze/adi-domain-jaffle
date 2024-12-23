@@ -51,6 +51,7 @@ seeds:
 vars:
   dbt_project_evaluator:
     exclude_packages: ["all"]
+  schema_behavior: 'default'
 
 dispatch:
   - macro_namespace: dbt
