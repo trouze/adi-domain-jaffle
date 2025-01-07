@@ -9,3 +9,7 @@
 
     {% do return(temp_relation) %}
 {% endmacro %}
+
+{% macro snowflake__current_timestamp() -%}
+  convert_timezone('UTC', current_timestamp(6))
+{%- endmacro %}

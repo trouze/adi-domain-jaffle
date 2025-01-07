@@ -1,0 +1,9 @@
+snapshots:
+  - name: orders_snapshot_check
+    relation: ref('orders_snapshot_eph')
+    config:
+      schema: snapshots
+      unique_key: id
+      strategy: check
+      check_cols:
+        - all
