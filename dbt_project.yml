@@ -60,5 +60,5 @@ dispatch:
   - macro_namespace: dbt
     search_order: ['adi_domain_jaffle', 'adi_common', 'dbt']
 
-on-run-end:
-  - "{{ dbt_artifacts.upload_results(results) }}"
+# on-run-end:
+#   - "{{ dbt_artifacts.upload_results(results) }}"

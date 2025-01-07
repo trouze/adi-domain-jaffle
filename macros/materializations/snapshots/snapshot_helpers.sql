@@ -13,3 +13,7 @@
 {% macro snowflake__current_timestamp() -%}
   convert_timezone('UTC', current_timestamp(6))
 {%- endmacro %}
+
+{% macro snowflake__snapshot_get_time() -%}
+  to_timestamp_ntz({{ current_timestamp() }})::TIMESTAMP_NTZ(6)
+{%- endmacro %}

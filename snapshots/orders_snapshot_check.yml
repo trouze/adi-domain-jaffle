@@ -4,6 +4,8 @@ snapshots:
     config:
       schema: snapshots
       unique_key: id
+      dbt_valid_to_current: "to_date('9999-12-31')"
       strategy: check
-      check_cols:
-        - all
+      table_format: iceberg
+      external_volume: ICEBERGEXVOL
+      check_cols: all
