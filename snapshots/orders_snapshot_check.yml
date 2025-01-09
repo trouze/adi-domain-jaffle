@@ -9,3 +9,4 @@ snapshots:
       table_format: iceberg
       external_volume: ICEBERGEXVOL
       check_cols: all
+      hard_deletes: "new_record"
