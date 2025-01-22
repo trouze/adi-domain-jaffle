@@ -17,6 +17,19 @@ exposures:
 
 models:
   - name: customers
+    config:
+      contract:
+        enforced: true
+    versions:
+      - v: 1
+        columns:
+          - include: ['customer_id','signup_date']
+      - v: 2
+        columns:
+          - include: all
+            exclude: ['last_model_run']
+      - v: 3
+    latest_version: 3
     description: some description
     meta:
       owner: "tyler.rouze@dbtlabs.com"
@@ -25,3 +38,15 @@ models:
         data_tests:
           - not_null
           - unique
+        data_type: text
+      - name: name
+        data_type: text
+      - name: signup_date
+        data_type: text
+      - name: load_dts
+        data_type: date
+      - name: last_model_run
+        data_type: timestamp_ltz
+      - name: test_col
+        data_type: text
+    

@@ -1,0 +1,1 @@
+select customer_id, signup_date, 'dummy' as dummy from {{ ref('dim_customers') }}

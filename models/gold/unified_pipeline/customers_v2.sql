@@ -1,0 +1,1 @@
+select customer_id, name, signup_date, load_dts, 'test' as test_col from {{ ref('dim_customers') }}
