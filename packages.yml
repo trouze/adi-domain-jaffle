@@ -1,7 +1,7 @@
 packages:
   - git: "https://{{ env_var('DBT_ENV_SECRET_GH') }}@github.com/trouze/adi-common.git"
     revision: "{{ env_var('DBT_COMMON_PKG') }}"
-  - package: brooklyn-data/dbt_artifacts
-    version: 2.7.0
-  - package: dbt-labs/dbt_project_evaluator
-    version: 0.14.3
+  # - package: brooklyn-data/dbt_artifacts
+  #   version: 2.8.0
+  - git: "https://github.com/patkearns10/dbt_artifacts.git"
+    revision: less-data-dbt-artifacts
